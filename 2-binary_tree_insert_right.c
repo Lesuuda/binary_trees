@@ -1,5 +1,10 @@
 #include "binary_trees.h"
-
+/**
+ * binary_tree_insert_right - creates a new_node of a binary tree
+ * @parent: root node of the binary tree
+ * @value: value of the node
+ * Return: the newly created node
+ */
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 {
 	if (parent == NULL)
@@ -7,7 +12,7 @@ binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 		return (NULL);
 	}
 	binary_tree_t *new_node = malloc(sizeof(binary_tree_t));
-	
+
 	if (new_node == NULL)
 	{
 		return (NULL);
@@ -21,7 +26,6 @@ binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 		parent->right->parent = new_node;
 		parent->right = new_node->right;
 	}
-    parent->right = new_node;
+	parent->right = new_node;
 	return (new_node);
-
 }
